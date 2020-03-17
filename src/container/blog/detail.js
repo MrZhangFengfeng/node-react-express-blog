@@ -1,7 +1,7 @@
 import React, { Component }from 'react'
 import axios from '../../model/axios'
 
-export default class Home extends Component {
+export default class BlogDetail extends Component {
 
   constructor(props){
     super(props);

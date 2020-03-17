@@ -3,7 +3,7 @@ import axios from '../../model/axios'
 import { List, Avatar } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 
-export default class Home extends Component {
+export default class BlogList extends Component {
 
   constructor(props){
     super(props);

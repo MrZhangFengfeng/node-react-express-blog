@@ -1,7 +1,6 @@
 import React, { Component }from 'react'
-import axios from '../../model/axios'
 
-export default class BlogAdd extends Component {
+export default class NotFound extends Component {
 
   constructor(props){
     super(props);
@@ -14,7 +13,7 @@ export default class BlogAdd extends Component {
   render() {
       return (
         <div>
-          this is detail
+          404
         </div>
       );
     }

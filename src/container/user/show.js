@@ -1,7 +1,7 @@
 import React, { Component }from 'react'
 import axios from '../../model/axios'
 
-export default class BlogAdd extends Component {
+export default class PersonalShow extends Component {
 
   constructor(props){
     super(props);
@@ -14,7 +14,7 @@ export default class BlogAdd extends Component {
   render() {
       return (
         <div>
-          this is detail
+          hello  may name is zhangxuefeng
         </div>
       );
     }
