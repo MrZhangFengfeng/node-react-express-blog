@@ -1,13 +1,22 @@
 import React, { Component }from 'react'
+import axios from '../../model/axios'
 import { Button } from 'antd';
 
 export default class Home extends Component {
 
-    render() {
-        return (
-          <div>
-            <Button type="primary">Primary</Button>
-          </div>
-        );
-      }
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount() {
+    
+  }
+
+  render() {
+      return (
+        <div>
+          Home
+        </div>
+      );
+    }
 }

@@ -1,13 +1,12 @@
 import React from 'react';
-import Home from './container/home/Home'
+import BlankLayout from './container/layout/layout'
 
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
+// import './App.less';
 
 function App() {
   return (
-    <div>
-       <Home />
-    </div>
+       <BlankLayout />
   );
 }
 
