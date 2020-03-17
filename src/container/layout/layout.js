@@ -1,7 +1,11 @@
 import React, { Component }from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { Layout, Breadcrumb, Button } from 'antd';
 import SideMenu from '../../components/sideMenu';
 import Home from '../../container/home/Home';
+import BlogList from '../../container/blog/list';
+import BlogDetail from '../../container/blog/detail';
+import BlogAdd from '../../container/blog/add';
 import axios from '../../model/axios'
 const { Header, Footer, Sider, Content } = Layout;
 require('./layout.css')
@@ -28,7 +32,6 @@ export default class BlankLayout extends Component {
               <SideMenu/>
             </Sider>
             <Layout>
-              <Button type="primary">zxf</Button>
                 <Header style={{background: 'transparent', paddingTop: '20px'}}>
                 <Breadcrumb>
                   <Breadcrumb.Item>Home</Breadcrumb.Item>
@@ -43,9 +46,13 @@ export default class BlankLayout extends Component {
                 </Header>
 
                 <Content>
-                  <Home/>
+                  <Router>
+                    <Route path="/blog/list" exact component={BlogList}/>
+                    <Route path="/blog/list/:id" component={BlogDetail}/>
+                    <Route path="/blog/add" component={BlogAdd}/>
+                  </Router>
                 </Content>
-                <Footer>Footer</Footer>
+                <Footer className='footer'>春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，便是人间好时节。</Footer>
             </Layout>
         </Layout>
       );

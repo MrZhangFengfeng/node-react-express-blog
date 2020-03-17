@@ -1,6 +1,7 @@
 import React, { Component }from 'react'
 import { Menu } from 'antd';
 import { AppstoreOutlined, MailOutlined, SettingOutline, BarsOutlined, UserOutlined } from '@ant-design/icons';
+import { Link } from "react-router-dom"
 
 const { SubMenu } = Menu;
 
@@ -43,8 +44,12 @@ export default class Sider extends React.Component {
             </span>
           }
         >
-          <Menu.Item key="blogList">列表</Menu.Item>
-          <Menu.Item key="addBlog">新建</Menu.Item>
+          <Menu.Item key="blogList">
+            <a href='/blog/list'>列表</a>
+          </Menu.Item>
+          <Menu.Item key="addBlog">
+            <a href='/blog/add'>列表</a>
+          </Menu.Item>
         </SubMenu>
         <SubMenu
           key="arts"  
