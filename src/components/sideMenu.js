@@ -35,22 +35,14 @@ export default class Sider extends React.Component {
           <UserOutlined />
           <a href='/user/show'>个人介绍</a>
         </Menu.Item>
-        <Menu.Item key="personal">
+        <Menu.Item key="blog">
           <BarsOutlined />
           <a href='/blog/list'>博客</a>
         </Menu.Item>
-        <SubMenu
-          key="arts"  
-          title={
-            <span>
-              <AppstoreOutlined />
-              <span>作品展示</span>
-            </span>
-          }
-        >
-          <Menu.Item key="5">Option 5</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-        </SubMenu>
+        <Menu.Item key="manage">
+          <AppstoreOutlined />
+          <a href='/manage'>个人中心</a>
+        </Menu.Item>
       </Menu>
     );
   }
