@@ -1,5 +1,5 @@
 import React, { Component }from 'react'
-import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter, Switch } from "react-router-dom"
 import { Layout, Breadcrumb, Button } from 'antd';
 import SideMenu from '../../components/sideMenu';
 import Home from '../../container/home/Home';
@@ -57,15 +57,17 @@ class BlankLayout extends Component {
 
               <Content>
                 <Router>
-                  <Route path="/" exact component={Home}/>
-                  <Route path="/user/show" component={PersonalShow}/>
-                  <Route path="/blog/list" exact component={BlogList}/>
-                  <Route path="/blog/list/:id" component={BlogDetail}/>
-                  <Route path="/blog/add" component={BlogAdd}/>
-                  <Route path="/blog/add" component={BlogAdd}/>
-                  <Route path="/manage" component={Manage}/>
-                  <Route path='/404' component={NotFound} />
-                  {/* <Redirect from='*' to='/404' /> */}
+                  <Switch>
+                    <Route path="/" exact component={Home}/>
+                    <Route path="/user/show" component={PersonalShow}/>
+                    <Route path="/blog/list" exact component={BlogList}/>
+                    <Route path="/blog/list/:id" component={BlogDetail}/>
+                    <Route path="/blog/add" component={BlogAdd}/>
+                    <Route path="/blog/add" component={BlogAdd}/>
+                    <Route path="/manage" component={Manage}/>
+                    <Route path='/404' component={NotFound} />
+                    <Redirect from='*' to='/404' />
+                  </Switch>
                 </Router>
               </Content>
               <Footer className='footer'>春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，便是人间好时节。</Footer>

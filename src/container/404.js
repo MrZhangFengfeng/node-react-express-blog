@@ -1,6 +1,7 @@
 import React, { Component }from 'react'
-
-export default class NotFound extends Component {
+import { Link, withRouter } from "react-router-dom"
+import './404.less'
+class NotFound extends Component {
 
   constructor(props){
     super(props);
@@ -13,8 +14,11 @@ export default class NotFound extends Component {
   render() {
       return (
         <div>
-          404
+          <div className="not_found">404</div>
+          <Link to="/">返回首页</Link>
         </div>
       );
     }
 }
+
+export default withRouter(NotFound)
