@@ -3,6 +3,7 @@ var router = express.Router();
 const { getBlogList,  getBlogDetail,  addBlog,  updateBlog,  deleteBlog } =require('../controller/blog')
 
 router.get('/list', function(req, res, next) {
+  console.log('------------')
   const author = req.query.author || ''
   const keyword = req.query.keyword || ''
   const result = getBlogList(author, keyword)
@@ -10,7 +11,8 @@ router.get('/list', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-  
+  const result = addBlog(req)
+  res.send(result)
 })
 
 module.exports = router;
