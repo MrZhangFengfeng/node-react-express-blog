@@ -1,26 +1,23 @@
 const { exec, escape } = require('../db/mysql')   // escape  防止SQL注入
 const xss = require('xss')   // 防止XSS攻击
 
-const getBlogList = (author, keyword) => {
+const getBlogList = (author) => {
     author = escape(author)
-    keyword = escape(keyword)
 
-    let sql = `select * from blogs where 1=1 `
+    let sql = `select * from list where 1=1 `
     if(author) {
         sql += `and author=${author} `
     }
-    if(keyword) {
-        sql += `and keyword=${keyword} `
-    }
+
     sql += `order by createtime desc;`
-    
+    console.log('getBlogList sql',sql)
 
     return exec(sql)
 }
 
 const getBlogDetail = (id) => {
     id = escape(id)
-    let sql = `select * from blogs where id=${id}`
+    let sql = `select * from list where id=${id}`
 
     return exec(sql).then(rows =>{
         return rows[0]
@@ -31,15 +28,12 @@ const addBlog = (blogData = {}) => {
     const title = xss(escape(blogData.title))
     const content = xss(escape(blogData.content))
     const author = xss(escape(blogData.author))
-    const createTime = Date().now()
+    const id = xss(escape(blogData.id))
+    const createTime = 123456
 
-    let sql = `insert into blogs (title, content, author, createtime) values (${title}, ${content}, ${author}, ${createTime})`
-
-    return exec(sql).then(res =>{
-        return {
-            id: res.insertId
-        }
-    })
+    let sql = `insert into list (id, title, content, author, createtime) values (${id}, ${title}, ${content}, ${author}, ${createTime})`
+    console.log('addBlog sql',sql)
+    return exec(sql)
 }
 
 const updateBlog = (id = 0, blogData = {}) =>{
@@ -47,7 +41,7 @@ const updateBlog = (id = 0, blogData = {}) =>{
     const title = xss(escape(blogData.title))
     const content = xss(escape(blogData.content))
 
-    let sql = `update blogs set title=${title}, content=${content} where id=${id}`
+    let sql = `update list set title=${title}, content=${content} where id=${id}`
 
     return exec(sql).then(res =>{
         if(res.affectedRows > 0) {

@@ -14,7 +14,10 @@ function exec(sql) {
                 reject(err)
                 return
             }
-            resolve(result)
+            // 去除nodejs链接数据库产生的RowDataPacket
+            result = JSON.stringify(result)
+            const data = JSON.parse(result)
+            resolve(data)
         })
     })
     return promise
