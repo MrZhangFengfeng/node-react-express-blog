@@ -15,11 +15,23 @@ export default class BlogList extends Component {
 
   componentDidMount() {
     const that = this
-    axios.get('/api/blog/list',{}).then(res =>{
+    axios.get('/api/blog/list',{
+      params: {
+        author: 'summer'
+    }
+    }).then(res =>{
         that.setState({
-            blogList: res.list
+            blogList: res.data
         })
     })
+
+    axios.post('/api/blog/add',{
+        author: 'summer',
+        title: 'hahahha',
+        content: 'thanks'
+    }).then(res =>{
+          console.log(res,'sssssssssssssssssssss')
+      })
   }
 
   render() {
@@ -54,7 +66,6 @@ export default class BlogList extends Component {
                     <List.Item.Meta
                     avatar={<Avatar src={item.avatar} />}
                     title={<a href={item.href}>{item.title}</a>}
-                    description={item.description}
                     />
                     {item.content}
                 </List.Item>

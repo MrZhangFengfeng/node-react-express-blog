@@ -23,7 +23,9 @@ export default class Manage extends Component {
     return (
       <div>
         {
-          manageList.map( item => <Button type='primary' className='manage_item'>{item.name}</Button> )
+          manageList.map( item => <Button type='primary' className='manage_item'>
+            <a href='/blog/add'>新建博客</a>
+          </Button> )
         }
       </div>
     );

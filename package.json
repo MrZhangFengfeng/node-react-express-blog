@@ -8,12 +8,15 @@
     "eject": "react-app-rewired eject"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^18.0.0",
+    "@ckeditor/ckeditor5-react": "^2.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.0.2",
     "axios": "^0.19.2",
     "babel-plugin-import": "^1.13.0",
+    "braft-editor": "^2.3.9",
     "customize-cra": "^0.9.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",

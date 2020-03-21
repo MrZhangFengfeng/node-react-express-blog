@@ -23,10 +23,7 @@ class BlankLayout extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.location,'666666666')
-    axios.get('/demo',{}).then(res =>{
-      
-    })
+
   }
 
   render() {

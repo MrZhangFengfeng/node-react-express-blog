@@ -28,12 +28,14 @@ const addBlog = (blogData = {}) => {
     const title = xss(escape(blogData.title))
     const content = xss(escape(blogData.content))
     const author = xss(escape(blogData.author))
-    const id = xss(escape(blogData.id))
     const createTime = 123456
 
-    let sql = `insert into list (id, title, content, author, createtime) values (${id}, ${title}, ${content}, ${author}, ${createTime})`
+    let sql = `insert into list (title, content, author, createtime) values (${title}, ${content}, ${author}, ${createTime})`
     console.log('addBlog sql',sql)
-    return exec(sql)
+    return exec(sql).then(res => {
+        console.log('add ressssssssssss',res)
+        return res
+    })
 }
 
 const updateBlog = (id = 0, blogData = {}) =>{
