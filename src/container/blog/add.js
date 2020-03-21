@@ -2,7 +2,7 @@ import React, { Component }from 'react'
 import axios from '../../model/axios'
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Input } from 'antd'
+import { Input, Button } from 'antd'
 
 import './add.less'
 
@@ -58,9 +58,11 @@ export default class BlogAdd extends Component {
                 } }
             />
           </div>
+
           <div className="showBlock">
             <div className="title">{this.state.title}</div>
             <div className="content" dangerouslySetInnerHTML={{__html: this.state.content}}/>
+            <Button onClick={this.addBlog} type="primary"  className="submit">新建</Button>
           </div>
         </div>
       );

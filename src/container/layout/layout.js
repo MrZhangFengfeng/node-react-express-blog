@@ -67,7 +67,7 @@ class BlankLayout extends Component {
                   </Switch>
                 </Router>
               </Content>
-              <Footer className='footer'>春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，便是人间好时节。</Footer>
+              {/* <Footer className='footer'>春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，便是人间好时节。</Footer> */}
           </Layout>
       </Layout>
     );
