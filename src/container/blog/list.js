@@ -24,14 +24,6 @@ export default class BlogList extends Component {
             blogList: res.data
         })
     })
-
-    axios.post('/api/blog/add',{
-        author: 'summer',
-        title: 'hahahha',
-        content: 'thanks'
-    }).then(res =>{
-          console.log(res,'sssssssssssssssssssss')
-      })
   }
 
   render() {

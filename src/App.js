@@ -1,12 +1,13 @@
 import React from 'react';
 import BlankLayout from './container/layout/layout'
-
-// import 'antd/dist/antd.css';
-// import './App.less';
+import Login from './container/login/login'
 
 function App() {
+
   return (
-       <BlankLayout />
+      <div>
+        {false ? <BlankLayout />: <Login />}
+      </div>
   );
 }
 

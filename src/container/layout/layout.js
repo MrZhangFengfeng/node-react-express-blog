@@ -35,7 +35,7 @@ class BlankLayout extends Component {
     // const pathSnippets = this.state.location.pathname.split('/').filter(i => i);
 
     return (
-      <Layout>
+        <Layout >
           <Sider>
             <div className="logo">
               <div className="avatar"></div>
@@ -69,7 +69,7 @@ class BlankLayout extends Component {
               </Content>
               {/* <Footer className='footer'>春有百花秋有月，夏有凉风冬有雪。若无闲事挂心头，便是人间好时节。</Footer> */}
           </Layout>
-      </Layout>
+        </Layout>
     );
   }
 }

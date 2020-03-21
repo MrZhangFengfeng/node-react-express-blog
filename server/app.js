@@ -37,7 +37,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));   // 如果访问public下的文件  可以将其返回
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/user', usersRouter);
 app.use('/api/blog', blogRouter);
 
 // catch 404 and forward to error handler

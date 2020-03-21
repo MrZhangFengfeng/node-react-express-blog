@@ -12,13 +12,13 @@ class NotFound extends Component {
   }
 
   render() {
-      return (
-        <div>
-          <div className="not_found">404</div>
-          <Link to="/">返回首页</Link>
-        </div>
-      );
-    }
+    return (
+      <div>
+        <div className="not_found">404</div>
+        <Link to="/">返回首页</Link>
+      </div>
+    );
+  }
 }
 
 export default withRouter(NotFound)
