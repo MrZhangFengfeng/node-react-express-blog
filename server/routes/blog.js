@@ -16,9 +16,9 @@ router.get('/list', function(req, res, next) {
 
 router.post('/add', function(req, res, next) {
   const result = addBlog(req.body)
-  return result.then((id)=> {
-    console.log('add blog', id)
-    res.json(new SuccessModel(id,'获取列表成功'))
+  return result.then((row)=> {
+    console.log('add blog', row)
+    res.json(new SuccessModel(row.insertId,'新建成功'))
   })
 })
 

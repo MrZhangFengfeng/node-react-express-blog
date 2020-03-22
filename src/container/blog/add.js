@@ -19,8 +19,15 @@ export default class BlogAdd extends Component {
   componentDidMount() {
     
   }
-  handleChange() {
-    console.log(this.state.editorState)
+  addBlog() {
+    const that = this
+    axios.post('/api/blog/add',{
+      title: this.state.title,
+      content: this.state.content,
+      author: 'zxf'
+    }).then(res =>{
+        console.log('新建博客结果:', res)
+    })
   }
 
   render() {
@@ -39,19 +46,16 @@ export default class BlogAdd extends Component {
                 editor={ ClassicEditor }
                 data={this.state.content}
                 onInit={ editor => {
-                    // You can store the "editor" and use when it is needed.
-                    console.log( 'Editor is ready to use!', editor );
+
                 } }
                 onChange={ ( event, editor ) => {
+                  const data = editor.getData();
+                } }
+                onBlur={ ( event, editor ) => {
                   const data = editor.getData();
                     this.setState({
                       content:data
                     });
-                    
-                    console.log( { event, editor, data } );
-                } }
-                onBlur={ editor => {
-                    console.log( 'Blur.', editor );
                 } }
                 onFocus={ editor => {
                     console.log( 'Focus.', editor );
@@ -62,7 +66,7 @@ export default class BlogAdd extends Component {
           <div className="showBlock">
             <div className="title">{this.state.title}</div>
             <div className="content" dangerouslySetInnerHTML={{__html: this.state.content}}/>
-            <Button onClick={this.addBlog} type="primary"  className="submit">新建</Button>
+            <Button onClick={() => this.addBlog()} type="primary"  className="submit">新建</Button>
           </div>
         </div>
       );

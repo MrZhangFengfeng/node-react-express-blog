@@ -17,7 +17,7 @@ export default class BlogList extends Component {
     const that = this
     axios.get('/api/blog/list',{
       params: {
-        author: 'summer'
+        author: 'zxf'
     }
     }).then(res =>{
         that.setState({
@@ -59,7 +59,7 @@ export default class BlogList extends Component {
                     avatar={<Avatar src={item.avatar} />}
                     title={<a href={item.href}>{item.title}</a>}
                     />
-                    {item.content}
+                    <div dangerouslySetInnerHTML={{__html: item.content}}/>
                 </List.Item>
                 )}
             />

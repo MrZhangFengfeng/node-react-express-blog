@@ -33,7 +33,6 @@ const addBlog = (blogData = {}) => {
     let sql = `insert into list (title, content, author, createtime) values (${title}, ${content}, ${author}, ${createTime})`
     console.log('addBlog sql',sql)
     return exec(sql).then(res => {
-        console.log('add ressssssssssss',res)
         return res
     })
 }
