@@ -5,7 +5,7 @@ import Register from './container/login/register'
 
 function App() {
   const [loginState, setLoginState] = useState(false);
-  const [register, setRegister] = useState(false);
+  const [register, setRegister] = useState(true);
 
   const getPage = () => {
     if(loginState) {
