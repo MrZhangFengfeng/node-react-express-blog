@@ -10,7 +10,7 @@ export default class Login extends Component {
         super(props);
     }
 
-  onFinish(values) {
+  handleLogin(values) {
     const that = this
     axios.post('/api/user/login',{
         ...values
@@ -27,7 +27,7 @@ export default class Login extends Component {
             name="normal_login"
             className="login-form"
             initialValues={{ remember: true }}
-            onFinish={this.onFinish}
+            onFinish={this.handleLogin}
             >
             <Form.Item
                 name="username"
