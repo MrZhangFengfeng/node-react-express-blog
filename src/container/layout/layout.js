@@ -10,6 +10,7 @@ import BlogAdd from '../../container/blog/add';
 import Manage from '../user/manage';
 import NotFound from '../../container/404';
 import axios from '../../model/axios'
+import { Provider } from 'react-redux'
 const { Header, Footer, Sider, Content } = Layout;
 require('./layout.css')
 

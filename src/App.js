@@ -2,6 +2,8 @@ import React, { useState }from 'react';
 import BlankLayout from './container/layout/layout'
 import Login from './container/login/login'
 import Register from './container/login/register'
+import { Provider } from 'react-redux'
+import store from '../src/redux/store'
 
 function App() {
   const [loginState, setLoginState] = useState(true);
@@ -20,9 +22,9 @@ function App() {
 
   }
   return (
-      <div>
+      <Provider store={store}>
         {getPage()}
-      </div>
+      </Provider>
   );
 }
 
